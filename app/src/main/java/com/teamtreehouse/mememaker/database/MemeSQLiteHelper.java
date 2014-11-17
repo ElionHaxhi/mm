@@ -26,21 +26,21 @@ public class MemeSQLiteHelper extends SQLiteOpenHelper{
     //Meme Table Annotations functionality
 
     //Meme Table Annotations functionality
-     public static final String ANNOTATIONS_TABLE = "ANNOTATIONS";
+    public static final String ANNOTATIONS_TABLE = "ANNOTATIONS";
     public static final String COLUMN_ANNOTATION_COLOR = "COLOR";
     public static final String COLUMN_ANNOTATION_X = "X";
     public static final String COLUMN_ANNOTATION_Y = "Y";
     public static final String COLUMN_ANNOTATION_TITLE = "TITLE";
     public static final String COLUMN_FOREIGN_KEY_MEME = "MEME_ID";
 
-    private static final String CREATE_ANNOTATIONS = "CREATE TABLE " + ANNOTATIONS_TABLE + " ("
+    private static final String CREATE_ANNOTATIONS = "CREATE TABLE " + ANNOTATIONS_TABLE + "("
             + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            COLUMN_ANNOTATION_COLOR + " TEXT, " +
+            COLUMN_ANNOTATION_TITLE + " TEXT, " +
             COLUMN_ANNOTATION_X + " INTEGER, " +
             COLUMN_ANNOTATION_Y + " INTEGER, " +
-            COLUMN_ANNOTATION_TITLE + " TEXT, " +
-            COLUMN_ANNOTATION_COLOR + " TEXT, " +
             COLUMN_FOREIGN_KEY_MEME + " INTEGER, " +
-            "FOREIGN KEY(" + COLUMN_FOREIGN_KEY_MEME + ") + REFERENCES MEMES(_ID))";
+            "FOREIGN KEY(" + COLUMN_FOREIGN_KEY_MEME + ")  REFERENCES MEMES(_ID))";
 
 
 
